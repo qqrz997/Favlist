@@ -39,7 +39,7 @@ internal static class ResourceLoader
     {
         try
         {
-            var resourcePath = $"{nameof(Favlist)}.{nameof(ResourceLoader)}.{resourceName}";
+            var resourcePath = $"{nameof(Favlist)}.{nameof(Resources)}.{resourceName}";
             await using var stream = ExecutingAssembly.GetManifestResourceStream(resourcePath);
 
             if (stream is null) throw new ArgumentException("Couldn't find resource", nameof(resourceName));

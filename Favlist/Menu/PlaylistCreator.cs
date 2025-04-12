@@ -48,11 +48,13 @@ internal class PlaylistCreator
     {
         var playlistSongs = await ConvertLevelIds(playerDataModel.playerData.favoritesLevelIds);
 
+        var imageBytes = await ResourceLoader.GetResource("FavlistIcon.png");
+        
         var playlist = new BeatSaberPlaylistModel(
             "Favorites (Created by Favlist)",
             "Favlist",
             playlistSongs.OrderBySongName().ToArray(),
-            Convert.ToBase64String(await ResourceLoader.GetResource("FavlistIcon.png")));
+            Convert.ToBase64String(imageBytes));
         
         var playlistJson = JsonConvert.SerializeObject(playlist, Formatting.Indented);
         
