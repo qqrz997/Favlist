@@ -19,7 +19,7 @@
     <!-- Message Box -->
     <horizontal bg="round-rect-panel" bg-alpha="0.7" pad="1" pad-left="3" pad-right="3"
                 horizontal-fit="PreferredSize" pref-width="86" pref-height="37">
-        <text id="message" word-wrapping="true" align="TopJustified" font-color="#C44" overflow-mode="Ellipsis" 
+        <text id="message" word-wrapping="true" align="TopJustified" overflow-mode="Ellipsis" 
               text="Ready to create favorites playlist."/>
     </horizontal>
     
