@@ -1,0 +1,43 @@
+<vertical xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://monkeymanboy.github.io/BSML-Docs/BSMLSchema.xsd"
+          spacing="2" child-align="MiddleCenter" child-expand-height="false" child-control-height="false">
+   
+    <!-- Title -->
+    <text text="Convert favorite songs to a new playlist" align="Capline" font-size="5" size-delta-y="4"/>
+    
+    <!-- Buttons -->
+    <horizontal pref-height="10" spacing="3">
+        <action-button id="convert-button" on-click="ConvertButtonPressed" text="Convert"
+                       horizontal-fit="Unconstrained" vertical-fit="Unconstrained"/>
+        
+        <button click-event="ShowSettings" text="Settings" 
+                horizontal-fit="Unconstrained" vertical-fit="Unconstrained"/>
+        
+        <button id="refresh-playlists-button" on-click="RefreshPlaylistsButtonPressed" text="Refresh Playlists" active="false"
+                horizontal-fit="Unconstrained" vertical-fit="Unconstrained"/>
+    </horizontal>
+    
+    <!-- Message Box -->
+    <horizontal bg="round-rect-panel" bg-alpha="0.7" pad="1" pad-left="3" pad-right="3"
+                horizontal-fit="PreferredSize" pref-width="86" pref-height="37">
+        <text id="message" word-wrapping="true" align="TopJustified" font-color="#C44" overflow-mode="Ellipsis" 
+              text="Ready to create favorites playlist."/>
+    </horizontal>
+    
+    <!-- Settings -->
+    <modal show-event="ShowSettings" click-off-closes="true" size-delta-x="95" size-delta-y="23">
+        <vertical pad="1">
+            <vertical horizontal-fit="Unconstrained" child-expand-height="false" child-control-height="false">
+                <toggle-setting value="OverwriteExisting" text="Overwrite Existing Favlist" apply-on-change="true"
+                                hover-hint="Disable this to create a separate Favlist every time."/>
+
+                <toggle-setting value="ExcludeWip" text="Exclude WIP Songs" apply-on-change="true"
+                                hover-hint="Work In Progress (WIP) songs will be excluded."/>
+                
+                <toggle-setting value="CheckBeatSaver" id="beatsaver-toggle" text="Check Songs Exist On BeatSaver" apply-on-change="true"
+                                hover-hint="Checks each favorite custom song and excludes those that are not available 
+                                            to download from BeatSaver (Requires the SongDetailsCache mod)."/>
+            </vertical>
+        </vertical>
+    </modal>
+    
+</vertical>
